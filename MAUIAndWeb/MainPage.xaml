@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MAUIAndWeb"
+             xmlns:pages="clr-namespace:MAUIAndWeb.Shared.Pages;assembly=MAUIAndWeb.Shared"
+             x:Class="MAUIAndWeb.MainPage"
+             BackgroundColor="{DynamicResource PageBackgroundColor}">
+
+    <BlazorWebView x:Name="blazorWebView" HostPage="wwwroot/index.html">
+        <BlazorWebView.RootComponents>
+            <RootComponent Selector="#app" ComponentType="{x:Type pages:Counter}" />
+        </BlazorWebView.RootComponents>
+    </BlazorWebView>
+
+</ContentPage>-->
+
+<Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:MAUIAndWeb"
+       xmlns:pages="clr-namespace:MAUIAndWeb.Shared.Pages;assembly=MAUIAndWeb.Shared"
+       x:Class="MAUIAndWeb.MainPage">
+    <Shell.TabBarUnselectedColor>
+        <Color>Gray</Color>
+    </Shell.TabBarUnselectedColor>
+    <Shell.TabBarForegroundColor>
+        <Color>White</Color>
+    </Shell.TabBarForegroundColor>
+    <Shell.TabBarBackgroundColor>
+        <Color>Navy</Color>
+    </Shell.TabBarBackgroundColor>
+    <Shell.BackgroundColor>
+        <Color>Navy</Color>
+    </Shell.BackgroundColor>
+    <TabBar>
+        <ShellContent Title="Home">
+            <ShellContent.Icon>
+                <FontImageSource Glyph="&#xe88a;" FontFamily="MaterialIcons"/>
+            </ShellContent.Icon>
+            <ContentPage x:Name="HomeWebView">
+                <BlazorWebView HostPage="wwwroot/index.html">
+                    <BlazorWebView.RootComponents>
+                        <RootComponent Selector="#app" ComponentType="{x:Type pages:Home}" />
+                    </BlazorWebView.RootComponents>
+                </BlazorWebView>
+            </ContentPage>
+        </ShellContent>
+        <ShellContent Title="Counter">
+            <ShellContent.Icon>
+                <FontImageSource Glyph="&#xea5f;" FontFamily="MaterialIcons"/>
+            </ShellContent.Icon>
+            <ContentPage x:Name="CounterWebView">
+                <BlazorWebView HostPage="wwwroot/index.html">
+                    <BlazorWebView.RootComponents>
+                        <RootComponent Selector="#app" ComponentType="{x:Type pages:Counter}" />
+                    </BlazorWebView.RootComponents>
+                </BlazorWebView>
+            </ContentPage>
+        </ShellContent>
+        <ShellContent Title="Weather">
+            <ShellContent.Icon>
+                <FontImageSource Glyph="&#xebdb;" FontFamily="MaterialIcons"/>
+            </ShellContent.Icon>
+            <ContentPage x:Name="WeatherWebView">
+                <BlazorWebView HostPage="wwwroot/index.html">
+                    <BlazorWebView.RootComponents>
+                        <RootComponent Selector="#app" ComponentType="{x:Type pages:Weather}" />
+                    </BlazorWebView.RootComponents>
+                </BlazorWebView>
+            </ContentPage>
+        </ShellContent>
+    </TabBar>
+</Shell>
